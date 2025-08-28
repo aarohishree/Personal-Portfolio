@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    body.dark-mode {
+        background-color: black;
+        color: white;
+    }
+    .Hide-info {
+        position: fixed;
+        top: 50px;
+        right: 10px;
+        padding: 10px 20px;
+        background-color: pink;
+        color: black;
+        border: black 2px solid;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #theme-toggle {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        background-color: pink;
+        color: black;
+        border: black 2px solid;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    body {
+        font-family:"Story Script", sans-serif;
+        margin: 200px;
+        background-color: beige;
+        padding: 20px;
+        
+        
+    }
+    .image {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .container {
+        max-width: 1100px;
+        gap: 20px;
+        
+       
+        display: flex; 
+        flex-direction: row; 
+        justify-content: space-between; 
+        /* align-items: flex-start; */
+    }
+    .introduction, .bio, .education, .Hobbies {
+        background-color: pink;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: black 2px solid;
+        
+    }
+    h1 {
+        color: #333;
+    }
+    p {
+        line-height: 1.6;
+        line-height-step: 1.5;
+    }
+</style>
+<body>
+    <button id="theme-toggle">Toggle Dark Mode</button>
+    <button class="Hide-info">Hide info</button>
+    <div class="image">
+        <h1> Personal Portfolio: Aarohishree Subedi</h1>
+
+        <img src="aarohi.png" alt="Aarohishree Subedi" width="200" height="200">
+    </div>
+    <div class="bio ">
+        <p> Hi, I am Aarohishree Subedi, a Computer Science student, interested in AI. I am a passionate learner and someone who enjoys reading.</p>
+    </div>
+    <div class = "container">
+    <div class="introduction"> 
+        <h1>Personal Details</h1>
+        <p>Name: Aarohishree Subedi</p>
+        <p>Address: Kathmandu, Nepal</p>
+        <p>Phone: +977-9805511966</p>
+        <p>Email: aarohishreesubedi@gmail.com</p>
+    </div>
+    
+    <div class="education">
+        <h1>Education</h1>
+        <p>Sunway College, Maitidevi, Kathmandu (2024-2027) <br>
+        ● Under-graduate in Computer Science with Artificial Intelligence <br>
+
+        Saint Xavier’s College, Maitighar, Kathmandu (2021-2023) <br>
+        ● Completed high school studies in the science stream for two academic years <br>
+
+        Little Angels’ Boarding School, Jhapa <br>
+        ● Completed upper secondary studies, up to grade 10. </p>
+    </div>
+    <div class="Hobbies">
+        <h1>Hobbies</h1>
+        <p>Reading Novels, Singing, Listening to music</p>
+    </div>
+    </div>  
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+});
+        
+        document.querySelector('.Hide-info').addEventListener('click', function() {
+            const educationDiv = document.querySelector('.education');
+            const hobbiesDiv = document.querySelector('.Hobbies');
+            
+            if (educationDiv.style.display === 'none') {
+                educationDiv.style.display = 'block';
+                hobbiesDiv.style.display = 'block';
+                this.textContent = 'Hide info';
+            } else {
+                educationDiv.style.display = 'none';
+                hobbiesDiv.style.display = 'none';
+                this.textContent = 'Show info';
+            }
+        });
+    </script>
+</body>
+</html>
